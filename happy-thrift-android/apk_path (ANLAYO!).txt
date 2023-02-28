@@ -1,0 +1,1 @@
+happy-thrift-android\platforms\android\app\build\outputs\apk\debug

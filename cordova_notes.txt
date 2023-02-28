@@ -1,0 +1,11 @@
+cordova appName com.appName.www AppName
+
+cordova requirements android
+
+cordova platform add android
+
+> lipat ng web files sa may www folder
+> check yung js/index.js, needed yon
+> pati yung cordova.js need din
+
+cordova build android
