@@ -25,25 +25,40 @@
         <div class="row">
             <div class="col-12">
                 <div class="form-group p-2">
-                    <a href=""><button type="button" class="btn btn-lg btn-primary w-100">Add Category</button></a>
+                    <button type="button" id="btnAddCategory" class="btn btn-lg btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modal">Add Category</button>
                 </div>
                 <hr>
             </div>
-            <div class="col-12">
-                <div class="form-group p-2">
-                    <a href=""><button type="button" class="btn btn-lg btn-primary w-100">Edit Category</button></a>
-                </div>
-                <hr>
-            </div>
-            <div class="col-12">
-                <div class="form-group p-2">
-                    <a href=""><button type="button" class="btn btn-lg btn-primary w-100">Delete Category</button></a>
-                </div>
-                <hr>
+            <div id="divContainer">
+
             </div>
         </div>
     </div>
-
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Category</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group p-2">
+                        <div class="input-group">
+                            <!-- <div class="input-group-prepend">
+                            <span class="input-group-text">@</span>
+                            </div> -->
+                            <input type="text" id="name" class="form-control form-control-lg" placeholder="Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="btnSaveCategory" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer class="container-fluid footer">
         <div class="form-group p-2">
             <a href="./index.html"><button type="button" class="btn btn-lg btn-primary w-100">BACK</button></a>
@@ -55,5 +70,7 @@
     </footer>
     <script src="../../assets/plugins/bootstrap-5.3.0/js/bootstrap.min.js"></script>
     <script src="../../assets/plugins/jquery-3.6.3/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../_scripts/_ajaxfunctions_prototype.js"></script>
+    <script type="text/javascript" src="./_scripts/categories.js"></script>
 </body>
 </html>
