@@ -1,0 +1,8 @@
+# Venv
+.venv
+
+# Cache
+*.py[cod]
+
+# Env
+.env

@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "happy-thrift-api"
+version = "0.1.0"
+description = ""
+authors = ["Jedddy <jedbalita25@gmail.com>"]
+readme = "README.md"
+packages = [{include = "happy_thrift_api"}]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+fastapi = {extras = ["all"], version = "^0.92.0"}
+uvicorn = "^0.20.0"
+python-dotenv = "^0.21.1"
+asyncpg = "^0.27.0"
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.4"}
+psycopg2 = "^2.9.5"
+alembic = "^1.9.4"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
