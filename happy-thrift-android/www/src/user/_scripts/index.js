@@ -25,7 +25,7 @@
             'products', 
             { }
             )
-            setTimeout(function () {                
+            setTimeout(function () {
                 var html = ''
                 $('#divContainer').empty();
                 $.each(self.response, function (i, v) {
