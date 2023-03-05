@@ -42,10 +42,10 @@
                                 '</div>' +
                             '</div>' +
                             '<div class="col-4">' +
-                                '<input type="hidden" data-prod-id="' + v.item.id + '" data-qty="' + v.amount + '"/>'
                                 '<p>' + v.item.name + ' | ' + v.item.size + '</p>' +
                                 '<p>Price: ' + v.item.price + '</p>' +
                                 '<p>Qty: ' + v.amount + '</p>' +
+                                // '<input type="hidden" data-prod-id="' + v.item.id + '" data-qty="' + v.amount + '"/>'
                                 // '<div class="input-group mb-3">' +
                                     // '<div class="input-group-prepend">' +
                                     //     '<span class="input-group-text"><button class="btn form-control btnDecreaseCart" type="button" value="' + v.item.id + '"><i class="fa fa fa-minus"></i></button></span>' +

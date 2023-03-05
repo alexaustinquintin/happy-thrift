@@ -24,10 +24,18 @@
                         '<div class="card-body">' +
                             '<div class="container">' +
                                 '<div class="row">' +
-                                    '<div class="col-12">' +
-                                        '<h1>' + v.amount + '</h1>' +
-                                        '<h1>' + v.status + '</h1>' +
+                                '<div class="col-8">' +
+                                    '<div class="container-image">' +
+                                        '<img src="../../assets/images/test.jpg" style="width:100%;">' +
+                                        '<div class="bottom-left">' + v.product_info.name + '</div>' +
                                     '</div>' +
+                                '</div>' +
+                                '<div class="col-4">' +
+                                    // '<input type="hidden" data-prod-id="' + v.product_info.id + '" data-qty="' + v.amount + '"/>'
+                                    '<p>' + v.product_info.name + ' | ' + v.product_info.size + '</p>' +
+                                    '<p>Price: ' + v.product_info.price + '</p>' +
+                                    '<p>Qty: ' + v.amount + '</p>' +
+                                    '<h1>' + v.status + '</h1>' +
                                 '</div>' +
                             '</div>' +
                         '</div>' +

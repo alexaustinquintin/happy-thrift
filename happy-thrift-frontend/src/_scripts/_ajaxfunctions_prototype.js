@@ -6,7 +6,7 @@
         this.token = window.name
     }
     DataClass.prototype = {
-        SendAJAXDataWithRedirect: function (type, url, dataJSON, href) {
+        SendAJAXDataAuth: function (type, url, dataJSON, href) {
             let self = this;
             let promiseObj = new Promise(function (resolve, reject) {
                 $.ajax({
@@ -20,11 +20,12 @@
                     ),
                     success: function(data) {
                         window.name = data["Access-Token"]
-                        window.location.href = href
+                        // window.location.href = href
                         resolve(true)
                     },
                     error: function(e) {
                         console.log(e.responseJSON.detail)
+                        self.error = e.responseJSON.detail
                         // alert(e.responseJSON.detail)
                         resolve(false)
                     }

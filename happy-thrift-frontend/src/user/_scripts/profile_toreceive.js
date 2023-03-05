@@ -35,13 +35,13 @@
                             '<div class="col-8">' +
                                 '<div class="container-image">' +
                                     '<img src="../../assets/images/test.jpg" style="width:100%;">' +
-                                    // '<div class="bottom-left">' + v.item.name + '</div>' +
+                                    '<div class="bottom-left">' + v.product_info.name + '</div>' +
                                 '</div>' +
                             '</div>' +
                             '<div class="col-4">' +
-                                // '<input type="hidden" data-prod-id="' + v.item.id + '" data-qty="' + v.amount + '"/>'
-                                // '<p>' + v.item.name + ' | ' + v.item.size + '</p>' +
-                                // '<p>Price: ' + v.item.price + '</p>' +
+                                // '<input type="hidden" data-prod-id="' + v.product_info.id + '" data-qty="' + v.amount + '"/>'
+                                '<p>' + v.product_info.name + ' | ' + v.product_info.size + '</p>' +
+                                '<p>Price: ' + v.product_info.price + '</p>' +
                                 '<p>Qty: ' + v.amount + '</p>' +
                                 // '<div class="input-group mb-3">' +
                                     // '<div class="input-group-prepend">' +
