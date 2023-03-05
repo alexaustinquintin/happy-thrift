@@ -13,8 +13,8 @@
                     dataType: 'json',
                     contentType: "application/json",
                     type: type,
-                    // url: 'https://happy-thrift-api2.onrender.com/' + url,
-                    url: 'http://127.0.0.1:10000/' + url,
+                    url: 'https://happy-thrift-api2.onrender.com/' + url,
+                    // url: 'http://127.0.0.1:10000/' + url,
                     data: JSON.stringify(
                         dataJSON
                     ),
@@ -25,7 +25,7 @@
                     },
                     error: function(e) {
                         console.log(e.responseJSON.detail)
-                        alert(e.responseJSON.detail)
+                        // alert(e.responseJSON.detail)
                         resolve(false)
                     }
                 })
@@ -40,8 +40,8 @@
                     dataType: 'json',
                     contentType: "application/json",
                     type: type,
-                    // url: 'https://happy-thrift-api2.onrender.com/' + url,
-                    url: 'http://127.0.0.1:10000/' + url,
+                    url: 'https://happy-thrift-api2.onrender.com/' + url,
+                    // url: 'http://127.0.0.1:10000/' + url,
                     headers: {
                         Authorization: 'Bearer '+ window.name
                     },
@@ -53,7 +53,7 @@
                         resolve(true)
                     },
                     error: function(e) {
-                        // console.log(e.responseJSON.detail)
+                        console.log(e.responseJSON.detail)
                         // alert(e.responseJSON.detail)
                         // window.location.href = "../login.html"
                         resolve(false)
