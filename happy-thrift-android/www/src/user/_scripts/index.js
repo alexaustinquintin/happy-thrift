@@ -14,18 +14,18 @@
             this.SendAJAXData('GET', 
             'account/me', 
             { }
-            )
-            setTimeout(function () {
+            ).then(function () {
+                // console.log(self.response)
                 self.id = self.response.id
-            }, 500)
+                self.GetProducts()
+            })
         },
         GetProducts: function () {
             var self = this;
             this.SendAJAXData('GET', 
             'products', 
             { }
-            )
-            setTimeout(function () {
+            ).then(function () {
                 var html = ''
                 $('#divContainer').empty();
                 $.each(self.response, function (i, v) {
@@ -33,6 +33,7 @@
                     html += 
                     '<div class="col-6">' +
                         '<div class="container-image">' +
+                            // '<img class="imgAddToCart" id="' + v.id + '" src="' + v.image_url + '" style="width:100%;">' +
                             '<img class="imgAddToCart" id="' + v.id + '" src="../../assets/images/test.jpg" style="width:100%;">' +
                             '<div class="bottom-left">' + v.name + '</div>' +
                         '</div>' +
@@ -40,7 +41,7 @@
                     $('#divContainer').append(html);
                     html = "";
                 })
-            }, 1000)
+            })
         },
     }
     Index.init.prototype = $.extend(Index.prototype, $D.init.prototype);
@@ -49,14 +50,11 @@
     $(document).ready(function () {
         var prototype = Index()
         prototype.GetUserInfo()
-        setTimeout(function () {
-            prototype.GetProducts()
-        }, 500)
 
         $('#divContainer').on('click', '.imgAddToCart', function () {
-            prototype.SendAJAXData('GET', 
+            prototype.SendAJAXData('POST', 
             'account/cart/' + this.id, 
-            { }
+            "1"
             )
             alert('Added to cart.')
         })

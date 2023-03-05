@@ -29,20 +29,22 @@
                 </div>
                 <hr>
             </div>
-            <div id="divContainer">
-
+            <div class="row" style="overflow-y: scroll; height:1000px;">
+                <div id="divContainer">
+                </div>
             </div>
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
+    <div class="modal fade modal-xl" id="modal" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Category</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Category</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body">                    
+                    <input type="hidden" id="id" value="0">
                     <div class="form-group p-2">
                         <div class="input-group">
                             <!-- <div class="input-group-prepend">

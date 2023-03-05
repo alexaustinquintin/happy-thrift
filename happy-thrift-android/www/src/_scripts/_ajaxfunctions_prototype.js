@@ -25,7 +25,7 @@
                     },
                     error: function(e) {
                         console.log(e.responseJSON.detail)
-                        alert(e.responseJSON.detail)
+                        // alert(e.responseJSON.detail)
                         resolve(false)
                     }
                 })
@@ -54,7 +54,7 @@
                     },
                     error: function(e) {
                         console.log(e.responseJSON.detail)
-                        alert(e.responseJSON.detail)
+                        // alert(e.responseJSON.detail)
                         // window.location.href = "../login.html"
                         resolve(false)
                     }
