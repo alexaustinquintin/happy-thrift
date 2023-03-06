@@ -12,9 +12,15 @@
     border: #AF793C solid !important;
 }
 
+body {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100vh !important;
+}
+
 /* footer */
 .footer {
-    position: fixed;
+    /* position: static; */
     left: 0;
     bottom: 0;
     width: 100%;
