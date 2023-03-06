@@ -1,11 +1,28 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.happythrift.www" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HappyThrift</name>
-    <description>Sample Apache Cordova App</description>
+    <name>Happy Thrift</name>
+    <description>Happy Thrift</description>
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
         Apache Cordova Team
     </author>
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
+    <access origin="*" />
+
+    <!-- <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest">              -->
+        <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
+        <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />            -->
+    <!-- </config-file>  -->
+
+    <edit-config
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            file="app/src/main/AndroidManifest.xml"
+            mode="merge"
+            target="/manifest/application">
+        <application android:usesCleartextTraffic="true" />
+    </edit-config>
+
 </widget>
