@@ -17,6 +17,8 @@
             ).then(function () {
                 // console.log(self.response)
                 self.id = self.response.id
+                self.address = self.response.shipping_address
+                $('#ShippingAddress').val(self.address)
                 self.GetCheckout()
             })
         },
