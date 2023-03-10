@@ -31,13 +31,20 @@
                 $.each(self.response, function (i, v) {
                     console.log(v)
                     html += 
-                    '<div class="col-6">' +
-                        '<div class="container-image">' +
-                            // '<img class="imgAddToCart" id="' + v.id + '" src="' + v.image_url + '" style="width:100%;">' +
-                            '<img class="imgAddToCart" id="' + v.id + '" src="../../assets/images/test.jpg" style="width:100%;">' +
-                            '<div class="bottom-left">' + v.name + '</div>' +
+                        '<div class="col-8">' +
+                            '<div class="container-image">' +
+                                '<img src="../../assets/images/test.jpg" style="width:100%;">' +
+                                '<div class="bottom-left">' + v.name + '</div>' +
+                            '</div>' +
                         '</div>' +
-                    '</div>';
+                        '<div class="col-4">' +
+                            '<br>' +
+                            '<p>' + v.name + ' | ' + v.size + '</p>' +
+                            '<p>Price: ' + v.price + '</p>' +
+                            '<div class="input-group mb-3">' +
+                                '<button type="button" class="btn btn-lg btn-primary-border w-100 btnAddToCart" value="' + v.id + '">Add to cart</button>' +
+                            '</div>' +
+                        '</div>';
                     $('#divContainer').append(html);
                     html = "";
                 })
@@ -51,12 +58,14 @@
         var prototype = Index()
         prototype.GetUserInfo()
 
-        $('#divContainer').on('click', '.imgAddToCart', function () {
+        $('#divContainer').on('click', '.btnAddToCart', function () {
             prototype.SendAJAXData('POST', 
-            'account/cart/' + this.id, 
+            'account/cart/' + this.value, 
             "1"
-            )
-            alert('Added to cart.')
+            ).then(function (isSuccess) {                
+                isSuccess == true ? alert('Added to cart.') : alert(self.error)
+            })
+            
         })
     });
 })();

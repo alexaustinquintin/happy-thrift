@@ -37,6 +37,12 @@
                                     '<p>Qty: ' + v.amount + '</p>' +
                                     '<h1>' + v.status + '</h1>' +
                                 '</div>' +
+                                '<div class="input-group mb-3">' +
+                                    '<button type="button" class="btn btn-lg btn-primary-border w-100 btnShipOrder" value="' + v.id + '">Ship Order</button>' +
+                                '</div>' +
+                                '<div class="input-group mb-3">' +
+                                    '<button type="button" class="btn btn-lg btn-primary-border w-100 btnCancelOrder" value="' + v.id + '">Cancel Order</button>' +
+                                '</div>' +
                             '</div>' +
                         '</div>' +
                     '</div>';
@@ -44,7 +50,27 @@
                     html = "";
                 })
             })
-        }
+        },          
+        ShipOrder: function (order_id) {
+            var self = this;
+            this.SendAJAXData('POST', 
+            'admin/orders/' + order_id, 
+            "shipping"
+            ).then(function (isSuccess) {
+                alert('Order shipped.')
+                self.GetPending()
+            })
+        },      
+        CancelOrder: function (order_id) {
+            var self = this;
+            this.SendAJAXData('POST', 
+            'admin/orders/' + order_id, 
+            "cancelled"
+            ).then(function (isSuccess) {
+                alert('Order cancelled.')
+                self.GetPending()
+            })
+        },
     }
     Pending.init.prototype = $.extend(Pending.prototype, $D.init.prototype);
     Pending.init.prototype = Pending.prototype;
@@ -52,5 +78,13 @@
     $(document).ready(function () {
         var prototype = Pending()
         prototype.GetPending()
+        
+        $('#divContainer').on('click', '.btnShipOrder', function () {
+            prototype.ShipOrder(+this.value)
+        })
+
+        $('#divContainer').on('click', '.btnCancelOrder', function () {
+            prototype.CancelOrder(+this.value)
+        })
     });
 })();
