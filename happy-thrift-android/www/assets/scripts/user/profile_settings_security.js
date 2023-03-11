@@ -23,6 +23,12 @@
 
                 self.email = self.response.email
                 $('#Email').val(self.email)
+                
+                self.birth_date = self.response.birth_date.substring(0, 10)
+                $('#BirthDate').val(self.birth_date)
+                
+                self.gender = self.response.gender
+                $('#Gender').val(self.gender)
             })
         },
         UpdateSecurity: function () {
@@ -32,11 +38,13 @@
             { 
                 email: $('#Email').val(),
                 full_name: $('#Name').val(),
-                shipping_address: ""
+                shipping_address: "",
+                birth_date: $('#BirthDate').val() + 'T00:00:00.0000',
+                gender: $('#Gender').val(),
             }
             ).then(function (isSuccess) {
                 // console.log(self.response)
-                isSuccess == true ? alert('Security updated.') : alert(self.error)
+                isSuccess == true ? alert('Information updated.') : alert(self.error)
             })
         }
     }
